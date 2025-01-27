@@ -1,6 +1,6 @@
 //import { createGlobalStyle } from "styled-components";
-import ToDoList from "./components/organism/ToDoList";
-import ToDoInput from "./components/molecule/ToDoInput";
+import ToDoList from "@/components/organism/ToDoList";
+import ToDoForm from "@/components/organism/ToDoForm";
 import "./globals.css";
 
 // const GlobalStyle = createGlobalStyle`
@@ -71,12 +71,11 @@ import "./globals.css";
 
 function App() {
   return (
-    <>
+    <div className="mt-60">
       {/* <GlobalStyle /> */}
-      <ToDoInput />
-      {/* <JoinUserForm /> */}
+      <ToDoForm />
       <ToDoList />
-    </>
+    </div>
   );
 }
 

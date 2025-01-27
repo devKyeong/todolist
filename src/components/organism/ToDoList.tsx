@@ -1,17 +1,22 @@
+import { toDosAtom } from "@/atoms/todo";
+import ToDoAccordionItem from "@/components/molecule/ToDo";
+import { Accordion } from "@/components/ui/accordion";
 import { useRecoilValue } from "recoil";
-import { toDosAtom } from "../../atoms/todo";
-import Todo from "../molecule/ToDo";
 
-function ToDoList() {
+export default function ToDoList() {
   const toDos = useRecoilValue(toDosAtom);
 
   return (
-    <ul>
-      {toDos.map((toDo) => (
-        <Todo {...toDo} />
-      ))}
-    </ul>
+    <>
+      <Accordion
+        type="single"
+        collapsible
+        className="w-[60%] mx-auto my-10 p-5 border-solid"
+      >
+        {toDos.map((toDo) => (
+          <ToDoAccordionItem key={toDo.id} {...toDo} />
+        ))}
+      </Accordion>
+    </>
   );
 }
-
-export default ToDoList;

@@ -2,9 +2,10 @@ import { atom } from "recoil";
 
 export interface ITodo {
   id: number;
-  category: "common" | "private" | "work";
+  type: "public" | "private";
+  state: "TODO" | "DOING" | "DONE";
   title: string;
-  state: "TO_DO" | "DOING" | "DONE";
+  description: string;
   regDate: string;
 }
 
